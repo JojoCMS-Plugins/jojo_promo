@@ -31,11 +31,23 @@ class JOJO_Plugin_Jojo_promo extends JOJO_Plugin
             $s['linktext'] = htmlspecialchars($s['linktext'], ENT_COMPAT, 'UTF-8', false);
             $s['description'] = $s['description_code'];
             $s['image'] = 'promos/' . $s['image'];
+            $s['html'] = self::getItemHtml($s);
         }
 
         return $promos;
     }
 
+    public static function getItemHtml($promo)
+    {
+        global $smarty;
+        $smarty->assign('promo', $promo);
+        $linktext = Jojo::getOption('promos_linktext', 'Read More');
+        $smarty->assign('promolinktext', $linktext!=-1 ? $linktext : false);
+        $smarty->assign('promotitles', Jojo::getOption('promos_titles', 'before'));
+        $smarty->assign('promoimages', Jojo::getOption('promos_images', 's200'));
+        $promohtml = $smarty->fetch('jojo_promo.tpl');
+        return $promohtml;
+    }
 
 
 }

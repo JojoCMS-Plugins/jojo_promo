@@ -76,10 +76,10 @@ $default_fd['promo']['description_code'] = array(
 /* URL */
 $field = 'link';
 $default_fd[$table][$field]['fd_order']    = $o++;
-$default_fd[$table][$field]['fd_type']     = 'internalurl';
+$default_fd[$table][$field]['fd_type']     = Jojo::getOption('promos_links', 'internal')=='internal' ? 'internalurl' : 'url';
 $default_fd[$table][$field]['fd_name']     = 'More info link';
 $default_fd[$table][$field]['fd_required'] = 'no';
-$default_fd[$table][$field]['fd_size']     = '30';
+$default_fd[$table][$field]['fd_size']     = '50';
 $default_fd[$table][$field]['fd_help']     = 'Web link';
 
 /* Link Title */
