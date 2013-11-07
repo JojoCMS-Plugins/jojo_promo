@@ -1,0 +1,1 @@
+Generates an array of promos as {$promos} with an html element pre-formatted by jojo_promo.tpl as well as cleaned field data elements. Image size, title position etc can be set in options.

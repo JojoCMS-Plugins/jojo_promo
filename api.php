@@ -51,6 +51,7 @@ $_options[] = array(
     'description' => 'This will control the size of the image in the promo. The letter dictates the shape, "s" for square, "w" for overall width, "h" for overall height. The number is the number of pixels for the give shape.',
     'type' => 'text',
     'default' => 's200',
+    'options' => '',
     'plugin' => 'jojo_promo'
 );
 
