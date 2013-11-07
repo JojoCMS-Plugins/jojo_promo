@@ -33,7 +33,6 @@ class JOJO_Plugin_Jojo_promo extends JOJO_Plugin
             $s['image'] = 'promos/' . $s['image'];
             $s['html'] = self::getItemHtml($s);
         }
-
         return $promos;
     }
 
