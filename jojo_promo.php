@@ -25,7 +25,7 @@ class JOJO_Plugin_Jojo_promo extends JOJO_Plugin
         $promos = Jojo::selectQuery("SELECT * FROM {promo} WHERE `active`=1 ORDER BY `displayorder`");
         $promos_num = Jojo::getOption('promos_num', 3);
 		if (Jojo::getOption('promos_random', 'yes')=='yes') { shuffle($promos); }
-        $promos = array_slice($promos, 0, $promos_num);
+        if ($promos_num!=-1) $promos = array_slice($promos, 0, $promos_num);
         foreach ($promos as $i => &$s){
             $s['title'] = htmlspecialchars($s['title'], ENT_COMPAT, 'UTF-8', false);
             $s['linktext'] = htmlspecialchars($s['linktext'], ENT_COMPAT, 'UTF-8', false);

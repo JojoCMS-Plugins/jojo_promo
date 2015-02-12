@@ -56,6 +56,17 @@ $_options[] = array(
 );
 
 $_options[] = array(
+    'id' => 'promos_images_responsive',
+    'category' => 'Promos',
+    'label' => 'Responsive Images',
+    'description' => 'If yes, images will have a class of img-responsive added.',
+    'type' => 'radio',
+    'default' => 'no',
+    'options' => 'yes,no',
+    'plugin' => 'jojo_promo'
+);
+
+$_options[] = array(
     'id' => 'promos_links',
     'category' => 'Promos',
     'label' => 'Link format',
