@@ -30,7 +30,7 @@ class JOJO_Plugin_Jojo_promo extends JOJO_Plugin
             $s['title'] = htmlspecialchars($s['title'], ENT_COMPAT, 'UTF-8', false);
             $s['linktext'] = htmlspecialchars($s['linktext'], ENT_COMPAT, 'UTF-8', false);
             $s['description'] = $s['description_code'];
-            $s['image'] = 'promos/' . $s['image'];
+            $s['image'] = $s['image'] ? 'promos/' . $s['image'] : '';
             $s['html'] = self::getItemHtml($s);
         }
         return $promos;
