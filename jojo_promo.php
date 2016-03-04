@@ -28,7 +28,7 @@ class JOJO_Plugin_Jojo_promo extends JOJO_Plugin
         if ($promos_num!=-1) $promos = array_slice($promos, 0, $promos_num);
         foreach ($promos as $i => &$s){
             $s['title'] = htmlspecialchars($s['title'], ENT_COMPAT, 'UTF-8', false);
-            $s['linktext'] = htmlspecialchars($s['linktext'], ENT_COMPAT, 'UTF-8', false);
+            $s['linktext'] = $s['linktext'] ? htmlspecialchars($s['linktext'], ENT_COMPAT, 'UTF-8', false) : Jojo::getOption('promos_linktext', 'Read More');
             $s['description'] = $s['description_code'];
             $s['image'] = $s['image'] ? 'promos/' . $s['image'] : '';
             $s['html'] = self::getItemHtml($s);
